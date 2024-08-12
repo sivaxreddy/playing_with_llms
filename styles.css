@@ -4,38 +4,39 @@
     --primary-color: #333;
     --background-color: #f0f0f0;
     --container-bg: white;
+    --header-bg: #e0e0e0;
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
-    padding: 1rem;
-    box-sizing: border-box;
+    padding: 0;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.site-header {
+    background-color: var(--header-bg);
+    padding: calc(var(--base-size) * 0.5) calc(var(--base-size) * var(--golden-ratio));
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.site-header h1 {
+    color: var(--primary-color);
+    font-size: calc(var(--base-size) * var(--golden-ratio));
+    margin: 0 0 calc(var(--base-size) * 0.5) 0;
 }
 
 .container {
-    background-color: var(--container-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px); /* Adjust based on your header height */
     padding: calc(var(--base-size) * var(--golden-ratio));
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--shadow-color);
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-    max-width: 90vw;
-    width: calc(var(--base-size) * var(--golden-ratio) * 20);
-}
-
-h1 {
-    color: var(--primary-color);
-    font-size: calc(var(--base-size) * var(--golden-ratio));
-    margin-bottom: calc(var(--base-size) * var(--golden-ratio));
-    transition: color 0.3s;
+    box-sizing: border-box;
 }
 
 #moon-phase {
@@ -46,10 +47,11 @@ h1 {
 #moon-info {
     font-size: calc(var(--base-size) * 1.2);
     margin-top: calc(var(--base-size) * var(--golden-ratio));
+    text-align: center;
 }
 
 .dark-mode-toggle {
-    margin-bottom: calc(var(--base-size) * var(--golden-ratio));
+    margin-top: calc(var(--base-size) * 0.5);
 }
 
 .toggle-checkbox {
@@ -76,11 +78,8 @@ body.dark-mode {
     --primary-color: #fff;
     --background-color: #222;
     --container-bg: #333;
+    --header-bg: #1a1a1a;
     --shadow-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode h1 {
-    color: var(--primary-color);
 }
 
 @media (max-width: 480px) {
@@ -88,11 +87,7 @@ body.dark-mode h1 {
         --base-size: 14px;
     }
 
-    .container {
-        padding: calc(var(--base-size) * var(--golden-ratio) * 0.8);
-    }
-
-    h1 {
+    .site-header h1 {
         font-size: calc(var(--base-size) * var(--golden-ratio) * 0.8);
     }
 
