@@ -1,39 +1,54 @@
+:root {
+    --golden-ratio: 1.618;
+    --base-size: 16px;
+    --primary-color: #333;
+    --background-color: #f0f0f0;
+    --container-bg: white;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    background-color: white;
-    padding: 2rem;
+    background-color: var(--container-bg);
+    padding: calc(var(--base-size) * var(--golden-ratio));
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--shadow-color);
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
+    max-width: 90vw;
+    width: calc(var(--base-size) * var(--golden-ratio) * 20);
 }
 
 h1 {
-    color: #333;
+    color: var(--primary-color);
+    font-size: calc(var(--base-size) * var(--golden-ratio));
+    margin-bottom: calc(var(--base-size) * var(--golden-ratio));
 }
 
 #moon-phase {
-    font-size: 100px;
-    margin: 1rem 0;
+    font-size: calc(var(--base-size) * var(--golden-ratio) * 3);
+    margin: calc(var(--base-size) * var(--golden-ratio)) 0;
 }
 
 #moon-info {
-    font-size: 18px;
-    margin-top: 1rem;
+    font-size: calc(var(--base-size) * 1.2);
+    margin-top: calc(var(--base-size) * var(--golden-ratio));
 }
 
 .dark-mode-toggle {
-    margin-bottom: 1rem;
+    margin-bottom: calc(var(--base-size) * var(--golden-ratio));
 }
 
 .toggle-checkbox {
@@ -42,11 +57,12 @@ h1 {
 
 .toggle-label {
     cursor: pointer;
-    padding: 5px 10px;
+    padding: calc(var(--base-size) * 0.5) calc(var(--base-size) * 0.8);
     background-color: #ddd;
     border-radius: 15px;
     display: inline-block;
     user-select: none;
+    font-size: calc(var(--base-size) * 0.9);
 }
 
 .toggle-checkbox:checked + .toggle-label {
@@ -56,15 +72,30 @@ h1 {
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #222;
-    color: #fff;
+    --primary-color: #fff;
+    --background-color: #222;
+    --container-bg: #333;
+    --shadow-color: rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode .container {
-    background-color: #333;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
+@media (max-width: 480px) {
+    :root {
+        --base-size: 14px;
+    }
 
-body.dark-mode h1 {
-    color: #fff;
+    .container {
+        padding: calc(var(--base-size) * var(--golden-ratio) * 0.8);
+    }
+
+    h1 {
+        font-size: calc(var(--base-size) * var(--golden-ratio) * 0.8);
+    }
+
+    #moon-phase {
+        font-size: calc(var(--base-size) * var(--golden-ratio) * 2.5);
+    }
+
+    #moon-info {
+        font-size: var(--base-size);
+    }
 }
