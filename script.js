@@ -50,9 +50,9 @@ function updateMoonInfo() {
 
     moonPhaseElement.textContent = moonEmoji;
     moonInfoElement.innerHTML = `
-        <p>Current Moon Phase: ${phaseName}</p>
-        <p>Phase Percentage: <span style="color: orange;">${phase.toFixed(2)}%</span></p>
-        <p>Current Date and Time in India: ${getIndiaTime()}</p>
+        <p><b>Current Moon Phase: ${phaseName}</b></p>
+        <p><b>Phase Percentage: <span style="color: orange;">${phase.toFixed(2)}%</span></b></p>
+        <p><b>Current Date and Time in India: ${getIndiaTime()}</b></p>
     `;
 }
 

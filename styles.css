@@ -21,6 +21,9 @@ body {
     transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
+h1 {
+    font-size: calc(var(--base-size) * var(--golden-ratio) * 1.5); /* Increased size by 1.5x */
+  }
 .site-header {
     background-color: var(--header-bg);
     padding: calc(var(--base-size) * 0.5) calc(var(--base-size) * var(--golden-ratio));
