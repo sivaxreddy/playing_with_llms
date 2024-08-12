@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -14,6 +15,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
@@ -28,4 +30,41 @@ h1 {
 #moon-info {
     font-size: 18px;
     margin-top: 1rem;
+}
+
+.dark-mode-toggle {
+    margin-bottom: 1rem;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #ddd;
+    border-radius: 15px;
+    display: inline-block;
+    user-select: none;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1 {
+    color: #fff;
 }

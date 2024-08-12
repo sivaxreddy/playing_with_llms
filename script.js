@@ -48,5 +48,19 @@ function updateMoonInfo() {
     `;
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
 updateMoonInfo();
-setInterval(updateMoonInfo, 60000); // Update every minute
+setInterval(updateMoonInfo, 1000); // Update every second
+
+// Dark mode toggle functionality
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('change', toggleDarkMode);
+
+// Check for user's preferred color scheme
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    darkModeToggle.checked = true;
+    toggleDarkMode();
+}
