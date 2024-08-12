@@ -35,6 +35,7 @@ h1 {
     color: var(--primary-color);
     font-size: calc(var(--base-size) * var(--golden-ratio));
     margin-bottom: calc(var(--base-size) * var(--golden-ratio));
+    transition: color 0.3s;
 }
 
 #moon-phase {
@@ -76,6 +77,10 @@ body.dark-mode {
     --background-color: #222;
     --container-bg: #333;
     --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1 {
+    color: var(--primary-color);
 }
 
 @media (max-width: 480px) {
