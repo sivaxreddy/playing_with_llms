@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Add this meta tag for mobile browser header color -->
     <meta name="theme-color" content="#e0e0e0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Moon Cycle Tracker - India</h1>
         <div class="dark-mode-toggle">
-            <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
-            <label for="darkModeToggle" class="toggle-label">Dark Mode</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
         </div>
         <div id="moon-phase"></div>
         <div id="moon-info"></div>
