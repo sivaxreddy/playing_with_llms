@@ -26,12 +26,13 @@ body {
     padding: calc(var(--base-size) * 0.5) calc(var(--base-size) * var(--golden-ratio));
     text-align: center;
     transition: background-color var(--transition-duration);
+    position: relative; /* Add this to position the dark mode toggle */
 }
 
 .site-header h1 {
     color: var(--primary-color);
     font-size: calc(var(--base-size) * var(--golden-ratio));
-    margin: 0 0 calc(var(--base-size) * 0.5) 0;
+    margin: 0;
     transition: color var(--transition-duration);
 }
 
@@ -61,7 +62,10 @@ body {
 }
 
 .dark-mode-toggle {
-    margin-top: calc(var(--base-size) * 0.5);
+    position: absolute;
+    top: calc(var(--base-size) * var(--golden-ratio));
+    right: calc(var(--base-size) * var(--golden-ratio));
+    z-index: 1000;
 }
 
 .toggle-checkbox {
@@ -114,5 +118,10 @@ body.dark-mode .toggle-label {
 
     #moon-info {
         font-size: var(--base-size);
+    }
+
+    .dark-mode-toggle {
+        top: calc(var(--base-size) * (var(--golden-ratio) / 2));
+        right: calc(var(--base-size) * (var(--golden-ratio) / 2));
     }
 }
