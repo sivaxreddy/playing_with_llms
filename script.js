@@ -64,3 +64,18 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     darkModeToggle.checked = true;
     toggleDarkMode();
 }
+// ... existing code ...
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Update meta theme-color
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (document.body.classList.contains('dark-mode')) {
+        metaThemeColor.setAttribute("content", "#222");
+    } else {
+        metaThemeColor.setAttribute("content", "#f0f0f0");
+    }
+}
+
+// ... rest of the existing code ...
