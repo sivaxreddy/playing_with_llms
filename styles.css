@@ -21,6 +21,15 @@ body {
     transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
+.location {
+    position: absolute;
+    top: calc(var(--base-size) * var(--golden-ratio));
+    left: calc(var(--base-size) * var(--golden-ratio));
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Add space between svg and span */
+}
+
 h1 {
     font-size: calc(var(--base-size) * var(--golden-ratio) * 1.5); /* Increased size by 1.5x */
   }
